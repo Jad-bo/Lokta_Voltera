@@ -17,13 +17,17 @@ for _ in range(0,100_000):
 	time.append(new_value_time)
 	lapin.append(new_value_lapin)
 	renard.append(new_value_renard)
-	
+
 renard = np.array(renard)
 renard *= 2000
 lapin = np.array(lapin)
 lapin *= 1000
 
 plt.figure(figsize=(15, 6))
-plt.plot(time, lapin, "b-")
-plt.plot(time, renard, "r-")
+plt.plot(time, lapin, "b-", label="Lapins") 
+plt.plot(time, renard, "r-", label="Renards")
+plt.xlabel("Temps") 
+plt.ylabel("Population") 
+plt.legend() 
+plt.title("Dynamique des populations selon le modèle de Lotka-Volterra")
 plt.show()	
